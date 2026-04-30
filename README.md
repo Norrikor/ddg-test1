@@ -1,18 +1,42 @@
-# Vue 3 + TypeScript + Vite
+cat > README.md << 'EOF'
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# Todo-лист на Vue 3
 
-## Recommended IDE Setup
+Обычный список дел, который умеет:
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- ✅ Добавлять задачи
+- ✏️ Редактировать
+- 🗑️ Удалять (спросит подтверждение)
+- 📌 Отмечать выполненные (они улетают вниз списка)
+- 💾 Всё сохраняется после перезагрузки страницы
 
-## Type Support For `.vue` Imports in TS
+## Что внутри
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+- **Vue 3** с Composition API
+- **TypeScript** (типы, интерфейсы)
+- **Pinia** для хранения данных
+- **Vite** сборщик
+- **localStorage** для сохранения задач
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## Структура папок
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+src/
+├── components/ # Карточка задачи и форма
+├── views/ # Страницы: главная, создание, редактирование
+├── stores/ # Хранилище с логикой и сохранением
+├── router/ # Маршруты между страницами
+└── types/ # Описание типа задачи
+
+## Как запустить у себя
+
+```bash
+# Скачать проект
+git clone https://github.com/Norrikor/ddg-test1
+cd ddg-test1
+
+# Установить зависимости
+npm install
+
+# Запустить (откроется http://localhost:5173)
+npm run dev
+```
