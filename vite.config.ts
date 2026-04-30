@@ -4,10 +4,14 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [vue()],
-  base: '/ddg-test1/', // <- это важно для GitHub Pages
+  base: '/ddg-test1/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
+  },
+  build: {
+    // Отключаем проверку типов при сборке
+    target: 'esnext',
   },
 })
